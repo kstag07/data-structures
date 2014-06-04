@@ -30,8 +30,8 @@ class Stack
 
   def pop
       raise "No nodes in Stack" if @head.nil?
-      @head.next = @head
       return @head.value
+      @head.next = @head
     end
 end
 
