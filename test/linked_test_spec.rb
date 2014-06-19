@@ -1,15 +1,17 @@
 require 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
-require './linked_list'
+require 'linked_list'
 
 class TestNodeLink < MiniTest::Unit::TestCase
+  def setup
+    @node = Node.new
+  end
 
   def test_inserting
     list = LinkedList.new
-    assert_equal 0, list.count
-    list.insert("one")
-    assert_equal 1, list.count
+    list.insert('num')
+    assert_equal 'num', node.head
   end
 
   def test_sizing
@@ -25,7 +27,7 @@ class TestNodeLink < MiniTest::Unit::TestCase
     list.insert('one')
     list.insert('two')
     assert_equal 'two', list.search('two')
-    assert_equal nil, list.search('three')
+    assert_equal 'nil', list.search('three')
   end
 
   def test_removing
@@ -36,16 +38,16 @@ class TestNodeLink < MiniTest::Unit::TestCase
     list.remove('three')
     assert_equal 'two', list.search('two')
     assert_equal 'one', list.search('one')
-    assert_equal nil, list.search('three')
+    assert_equal 'nil', list.search('three')
   end
 
-   def test_stringing
-     list = LinkedList.new
-     list.insert('one')
-     list.insert('two')
-     list.insert('three')
-     assert_equal 'one, two, three', list.to_str
-   end
+  def test_stringing
+    list = LinkedList.new
+    list.insert('one')
+    list.insert('two')
+    list.insert('three')
+    assert_equal ('one', 'two', 'three'),list.to_s()
+  end
 
 end
 

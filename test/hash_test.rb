@@ -1,6 +1,6 @@
 require "minitest/autorun"
 require "minitest/pride"
-require "./hash"
+require "hash"
 
 describe "Hash Table Set" do
 

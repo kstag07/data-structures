@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require './quick'
-require 'pry'
+require 'quick'
+
 require 'benchmark'
 
 describe 'Quick sort test' do

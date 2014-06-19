@@ -1,7 +1,7 @@
 require 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
-require './queue'
+require 'queue'
 
 class QueueTest < MiniTest::Unit::TestCase
 
@@ -25,14 +25,10 @@ class QueueTest < MiniTest::Unit::TestCase
   def test_dequeue
     queue = Queue.new
     queue.enqueue('one')
-    puts queue.size
     queue.enqueue('two')
-    puts queue.size
     queue.enqueue('three')
-    puts queue.size
     assert_equal 3, queue.size
     result = queue.dequeue
-    puts queue.size
     assert_equal 'one', result
     assert_equal 2, queue.size
   end

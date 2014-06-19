@@ -1,3 +1,0 @@
- gem 'pry-nav'
-  gem 'pry-rails'
-  gem 'pry-stack_explorer'

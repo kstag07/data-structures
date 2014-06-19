@@ -1,6 +1,6 @@
 require "minitest/autorun"
 require "minitest/pride"
-require "./nondup"
+require "nondup"
 
 class ListTest < MiniTest::Unit::TestCase
 

@@ -1,3 +1,4 @@
+
 class Node
   attr_accessor :value, :next_node
 
@@ -25,6 +26,7 @@ def enqueue(value)
     @head = current
     @tail = current
   else
+    current.prev_node = @tail
     @tail.next_node = current
     @tail = current
   end

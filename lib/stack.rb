@@ -18,8 +18,10 @@ class Stack
     current_node = Node.new(value)
      if @head.nil?
       @head = current_node
+      @tail = current_node
      else
       current_node.next = @head
+      current_node.next = @tail
        @head = current_node
      end
   end

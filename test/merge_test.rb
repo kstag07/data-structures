@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require './merge'
+require 'merge'
 require "benchmark"
 
 describe "Merge test" do

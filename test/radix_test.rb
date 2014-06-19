@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require './radix'
+require 'radix'
 require "benchmark"
 
 describe "Radix test" do

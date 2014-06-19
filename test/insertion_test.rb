@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require './insertion_sort'
+require 'insertion_sort'
 require 'benchmark'
 
 describe "Insertion test" do

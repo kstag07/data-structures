@@ -1,8 +1,7 @@
 require 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
-require './binary'
-require 'pry'
+require 'binary'
 
 class TestBinary < MiniTest::Unit::TestCase
 

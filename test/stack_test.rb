@@ -1,6 +1,6 @@
 require 'minitest'
 require 'minitest/autorun'
-require './stack'
+require 'stack'
 require 'minitest/pride'
 
 class TestNodeLink < MiniTest::Unit::TestCase
