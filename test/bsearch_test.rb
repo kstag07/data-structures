@@ -40,4 +40,25 @@ describe "testing a binary search tree" do
   def test_balance
     assert_equal -4, @b_search.balance
   end
- end
+
+  def test_pre_order_traverse
+    pre_arry = [5, 4, 3, 2, 6, 7, 8, 9, 42, 22, 11]
+    assert_equal pre_arry, @b_search.pre_traverse
+  end
+
+  def test_in_order_traverse
+    ord_arry = [2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 42]
+    assert_equal ord_arry, @b_search.ord_traverse
+  end
+
+  def test_post_order_traverse
+    post_arry =[2, 3, 4, 11, 22, 42, 9, 8, 7, 6, 5]
+    assert_equal post_arry, @b_search.post_traverse
+  end
+
+  def test_breadth_first_traverse
+    breadth_arry =[5, 4, 6, 3, 7, 2, 8, 9, 42, 22, 11]
+    assert_equal breadth_arry, @b_search.breadth_traverse
+  end
+
+end

@@ -19,6 +19,7 @@ class BinarySearchTree
   def initialize(root = nil)
     @root = root
     @count = 0
+    @@order = []
   end
 
 def insert(value)
@@ -38,6 +39,21 @@ def balance
   balancing(@root)
 end
 
+def pre_traverse
+  pre_traversing(@root)
+end
+
+def ord_traverse
+  ord_traversing(@root)
+end
+
+def post_traverse
+  post_traversing(@root)
+end
+
+def breadth_traverse
+  breadth_traversing(@root)
+end
 
 
 def size
@@ -96,7 +112,56 @@ private
     return treenode
 end
 
+def pre_traversing(node)
+    order = []
+    stack = []
+     while (!stack.empty? or node != nil)
+      if node != nil
+        order << node.value
+        stack.push(node)
+        node = node.left
+      else
+        node = stack.pop
+        node= node.right
+      end
+     end
+     order
+  end
 
+  def ord_traversing(node)
+    order = []
+    stack = []
+    while (!stack.empty? or node != nil)
+      if node != nil
+        stack.push(node)
+        node = node.left
+      else
+        node = stack.pop
+        order << node.value
+        node= node.right
+      end
+    end
+    order
+  end
+
+  def post_traversing(node)
+    post_traversing(node.left) if node.left
+    post_traversing(node.right) if node.right
+    @@order << node.value
+  end
+
+  def breadth_traversing(node)
+    queue = []
+    order = []
+    queue.unshift(node)
+    while !queue.empty?
+      node = queue.pop
+      order << node.value
+      queue.unshift(node.left) if node.left != nil
+      queue.unshift(node.right) if node.right != nil
+    end
+    order
+  end
 
 
 end
