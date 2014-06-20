@@ -1,6 +1,7 @@
 require "minitest/autorun"
 require "minitest/pride"
 require "bsearch"
+require 'benchmark'
 
 
 describe "testing a binary search tree" do
@@ -59,6 +60,13 @@ describe "testing a binary search tree" do
   def test_breadth_first_traverse
     breadth_arry =[5, 4, 6, 3, 7, 2, 8, 9, 42, 22, 11]
     assert_equal breadth_arry, @b_search.breadth_traverse
+  end
+
+  after do
+     puts 'best'
+    puts Benchmark.measure { @b_search.contains(5) }
+    puts 'worst'
+    puts Benchmark.measure { @b_search.contains(11) }
   end
 
 end
